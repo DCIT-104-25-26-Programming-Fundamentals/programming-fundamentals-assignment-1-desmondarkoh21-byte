@@ -1,0 +1,32 @@
+# Function to print the multiplication table of one number
+def single_table(number):
+    print(f"\nMultiplication Table for {number}:")
+    for i in range(1, 13):
+        print(number, "x", i, "=", number * i)
+
+# Function to print multiplication tables from 1 to N
+def multiple_tables(n):
+    for num in range(1, n + 1):
+        print(f"\nMultiplication Table for {num}:")
+        for i in range(1, 13):
+            print(num, "x", i, "=", num * i)
+        print("---------------------------")
+
+# Main Program
+
+number = int(input("Enter a number: "))
+
+if number <= 0:
+    print("Error: Please enter a positive integer.")
+else:
+    # Part A
+    single_table(number)
+
+    # Part B
+    n = int(input("\nEnter a number N: "))
+
+    if n <= 0:
+        print("Error: Please enter a positive integer.")
+    else:
+        multiple_tables(n)
+        
