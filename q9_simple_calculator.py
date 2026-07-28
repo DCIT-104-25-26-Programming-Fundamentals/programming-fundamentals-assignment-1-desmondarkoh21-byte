@@ -50,8 +50,15 @@ while True:
         print("Invalid choice. Please select a number from 1 to 7.")
         continue
 
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except EOFError:
+        print("Input ended. Goodbye!")
+        break
+    except ValueError:
+        print("Invalid number. Please enter numeric values.")
+        continue
 
     if choice == "1":
         print(f"Result: {num1} + {num2} = {add(num1, num2)}")
@@ -78,4 +85,3 @@ while True:
 
     elif choice == "6":
         print(f"Result: {num1} ** {num2} = {exponent(num1, num2)}")
-        
